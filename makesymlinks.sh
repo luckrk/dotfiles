@@ -8,7 +8,7 @@
 
 dir=~/Repozytoria/dotfiles                    # dotfiles directory
 olddir=~/Repozytoria/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc gvimrc"    # list of files/folders to symlink in homedir
+files="zshrc zpreztorc vimrc gvimrc"    # list of files/folders to symlink in homedir
 
 ##########
 
