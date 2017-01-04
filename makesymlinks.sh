@@ -6,8 +6,8 @@
 
 ########## Variables
 
-dir=~/Repozytoria/dotfiles                    # dotfiles directory
-olddir=~/Repozytoria/dotfiles_old             # old dotfiles backup directory
+dir=~/Repos/dotfiles                    # dotfiles directory
+olddir=~/Repos/dotfiles_old             # old dotfiles backup directory
 files="zshrc zpreztorc vimrc gvimrc"    # list of files/folders to symlink in homedir
 
 ##########

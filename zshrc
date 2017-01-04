@@ -44,3 +44,4 @@ function apt-history(){
 
 alias cdd='cd ~/Pobrane'
 alias cdp='cd ~/Pulpit/Praca'
+alias niebieskizab='pactl load-module module-bluetooth-discover'
