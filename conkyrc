@@ -89,39 +89,39 @@ ${goto 6}${font StyleBats:size=16}A${font}${voffset -4}${goto 32}CPU1: ${cpu cpu
 ${goto 6}${voffset 4}${font StyleBats:size=16}A${font}${voffset -4}${goto 32}CPU2: ${cpu cpu1}% ${alignr}${cpubar cpu1 8,60}
 ${goto 6}${voffset 4}${font StyleBats:size=16}A${font}${voffset -4}${goto 32}CPU3: ${cpu cpu2}% ${alignr}${cpubar cpu2 8,60}
 ${goto 6}${voffset 4}${font StyleBats:size=16}A${font}${voffset -4}${goto 32}CPU4: ${cpu cpu3}% ${alignr}${cpubar cpu3 8,60}
-${goto 6}${voffset 4}${font StyleBats:size=16}g${font}${voffset -4}${goto 32}Memory: ${mem} ${alignr}${membar 8,60}
-${goto 6}${voffset 4}${font StyleBats:size=16}x${font}${voffset -4}${goto 32}Disk: ${diskio}${alignr}${diskiograph 8,60 F57900 FCAF3E}
+${goto 6}${voffset 4}${font StyleBats:size=16}g${font}${voffset -4}${goto 32}RAM: ${mem} ${alignr}${membar 8,60}
+${goto 6}${voffset 4}${font StyleBats:size=16}x${font}${voffset -4}${goto 32}Dysk: ${diskio}${alignr}${diskiograph 8,60 F57900 FCAF3E}
 ${goto 6}${voffset 4}${font StyleBats:size=16}j${font}${voffset -4}${goto 32}Swap: $swapperc% ${alignr}${swapbar 8,60}
-${goto 4.5}${voffset 2}${font Poky:size=15}y${font}${voffset -6}${goto 32}HDD temperature:${alignr}${color #FCAF3E}${exec hddtemp /dev/sda -n --unit=C} °C$color
-${goto 6}${voffset 4}${font StyleBats:size=16}q${font}${voffset -4}${goto 32}Uptime: ${alignr}${uptime}
-${goto 6}${voffset 4}${font StyleBats:size=16}k${font}${voffset -4}${goto 32}Processes: ${alignr}$processes ($running_processes running)
-${goto 7.5}${voffset 4}${font Poky:size=15}a${font}${goto 32}${voffset -10}Highest: ${alignr 13}CPU${alignr}RAM
+${goto 4.5}${voffset 2}${font Poky:size=15}y${font}${voffset -6}${goto 32}HDD temperatura:${alignr}${color #FCAF3E}${exec hddtemp /dev/sda -n --unit=C} °C$color
+${goto 6}${voffset 4}${font StyleBats:size=16}q${font}${voffset -4}${goto 32}Na chodzie: ${alignr}${uptime}
+${goto 6}${voffset 4}${font StyleBats:size=16}k${font}${voffset -4}${goto 32}Procesy: ${alignr}$processes ($running_processes running)
+${goto 7.5}${voffset 4}${font Poky:size=15}a${font}${goto 32}${voffset -10}Zasobożerne: ${alignr 13}CPU${alignr}RAM
 ${goto 32}${voffset -5.5}${hr 1}
 ${voffset -1}${goto 32}${top name 1} ${goto 124}${top cpu 1}${alignr }${top mem 1}
 ${voffset -1}${goto 32}${top name 2} ${goto 124}${top cpu 2}${alignr }${top mem 2}
 ${voffset -1}${goto 32}${top name 3} ${goto 124}${top cpu 3}${alignr }${top mem 3}
 ${voffset -1}${goto 32}${top name 4} ${goto 124}${top cpu 4}${alignr }${top mem 4}
 
-Time & Date ${hr 2}
+Czas i data ${hr 2}
 ${font Arial Black:size=26}${alignc}${time %H:%M}${font}
 ${alignc}${time %A, %B %d, %Y}
 
 HDD ${hr 2}
-${font Poky:size=16}y${font} ${voffset -5}File System
+${font Poky:size=16}y${font} ${voffset -5}Root
 ${voffset 4}${fs_free /}/${fs_size /} ${alignr}${fs_bar 8,60 /}
 ${font Poky:size=16}y${font} ${voffset -5}Home
 ${voffset 4}${fs_free /home}/${fs_size /home} ${alignr}${fs_bar 8,60 /home}
 
-Network ${hr 2}
+Sieć ${hr 2}
 ${if_up wlan0}
 ${font Poky:size=14}Y${font}${goto 32}${voffset -8}SSID: ${wireless_essid wlan0}
-${goto 32}Signal: ${wireless_link_qual wlan0}% ${alignr}${wireless_link_bar 8,60 wlan0}
+${goto 32}Sygnał: ${wireless_link_qual wlan0}% ${alignr}${wireless_link_bar 8,60 wlan0}
 ${voffset 4}${font VariShapes Solid:size=14}q${font}${goto 32}${voffset -6}Up: ${upspeed wlan0}${font} ${alignr}${upspeedgraph wlan0 8,60 F57900 FCAF3E}
-${goto 32}Total: ${totalup wlan0}
+${goto 32}Całkowity: ${totalup wlan0}
 ${voffset 4}${font VariShapes Solid:size=14}Q${font}${goto 32}${voffset -6}Down: ${downspeed wlan0}${font} ${alignr}${downspeedgraph wlan0 8,60 F57900 FCAF3E}
-${goto 32}Total: ${totaldown wlan0}
-${voffset 4}${font Poky:size=13}w${font}${goto 32}${voffset -8}Local IP: ${alignr}${addr wlan0}
-${goto 32}Public IP: ${alignr}${execi 3600 dig +short myip.opendns.com @resolver1.opendns.com}
+${goto 32}Całkowity: ${totaldown wlan0}
+${voffset 4}${font Poky:size=13}w${font}${goto 32}${voffset -8}Lokalny IP: ${alignr}${addr wlan0}
+${goto 32}Publiczny IP: ${alignr}${execi 3600 dig +short myip.opendns.com @resolver1.opendns.com}
 # |--ETH0
 ${else}${if_up eth0}
 ${voffset -13}${font VariShapes Solid:size=14}q${font}${goto 32}${voffset -6}Up: ${upspeed eth0}${font} ${alignr}${upspeedgraph eth0 8,60 F57900 FCAF3E}
