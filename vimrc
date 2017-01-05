@@ -22,6 +22,8 @@ set fileencoding=utf-8
 set encoding=utf-8
 set backspace=indent,eol,start
 set noswapfile
+"""""" PLUGINS """""""""""
+execute pathogen#infect()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 02. Events                                                                 "
@@ -40,10 +42,11 @@ set ofu=syntaxcomplete#Complete
 " 03. Theme/Colors                                                           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "set t_Co=256              " enable 256-color mode.
+set t_Co=16
 syntax enable             " enable syntax highlighting (previously syntax on).
-"colorscheme molokai       " set colorscheme
-set background=dark
 
+colorscheme solarized
+set background=dark
 " Prettify Markdown files
 augroup markdown
   au!
@@ -93,3 +96,4 @@ set nowrap                " don't wrap text
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 06. Custom Commands                                                        "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+imap <Tab> <C-n>
