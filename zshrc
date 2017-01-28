@@ -39,6 +39,8 @@ function apt-history(){
               ;;
       esac
 }
+# My exports
+export EDITOR='vim'
 
 # Aliases
 
